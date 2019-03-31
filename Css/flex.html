@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Flex</title>
+  <link rel="stylesheet" href="../common/common.css">
+</head>
+<style>
+  .box-row-reverse{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: baseline;
+  }
+  .box-row-reverse div{
+    background: #c1c1c1;
+    margin: 10px;
+    height:100px;
+    width: 100px;
+  }
+
+
+  .box-column-reverse{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start
+  }
+  .box-column-reverse div{
+    background: #ddd;
+    margin: 10px;
+    height:100px;
+    width: 100px;
+  }
+</style>
+<body>
+  <p class="title">box-row-reverse | 主轴为水平方向，起点是右端</p>
+  <div class="box-row-reverse">
+    <div class="">呵呵</div>
+    <div class="" style="padding-top: 15px; align-self:flex-end;">jkjkjkjlkh</div>
+    <div class="">你好啊</div>
+    <div class="">嘻嘻嘻</div>
+    <div class="">popdovps</div>
+    <div class="">1</div>
+    <div class="">2</div>
+    <div class="">3</div>
+    <div class="" style="flex-shrink: 0">4</div>
+    <!-- <div class="" style="order: 0">5</div> -->
+  </div>
+  <p class="title">box-column-reverse | 主轴为垂直方向，起点是下沿</p>
+  <div class="box-column-reverse">
+    <div class="">1</div>
+    <div class="">2</div>
+    <div class="">3</div>
+    <div class="">4</div>
+    <div class="" style="order: 0;align-self:flex-end;">5</div>
+  </div>
+</body>
+</html>
