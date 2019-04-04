@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型</title>
+</head>
+<body>
+<script>
+    let myObject = {
+        a: 2
+    }
+    console.log(myObject.__proto__.constructor.keys)
+
+    function Newfun(){
+        this.name = 'caiyijun'
+    }
+    Newfun.prototype.getName = function(){
+        return this.name
+    }
+    var instance = new Newfun()
+    console.log(instance.getName())
+    console.log(instance instanceof Newfun)
+
+    console.log('------------')
+
+    function SuperType () {
+        this.property = true
+    }
+    SuperType.prototype.getSuperValue = function(){
+        return this.property
+    }
+    function SubType () {
+        this.subproperty = false
+    }
+    SubType.prototype = new SuperType()
+
+    SubType.prototype.getSuperValue = function () {
+        return false
+    }
+    SubType.prototype.getSubValue = function(){
+        return this.subproperty
+    }
+    var instance01 = new SubType()
+    console.log(instance01.getSuperValue())
+</script>
+</body>
+</html>
