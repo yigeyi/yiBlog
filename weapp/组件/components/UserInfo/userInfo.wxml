@@ -1,0 +1,7 @@
+<!--components/UserInfo/userInfo.wxml-->
+<view>
+  输入信息: {{inputContent}}
+</view>
+<view>
+  输出信息: {{outputContent}}
+</view>

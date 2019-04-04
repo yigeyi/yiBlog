@@ -1,0 +1,15 @@
+<!--index.wxml-->
+<view class="container">
+    <button
+            type="primary"
+            bindtap="primary"
+    >
+        Click
+    </button>
+<!--    绑定组件事件 bindcancelEvent  && bindconfirmEvent-->
+    <dialog id="dialog" title="弹窗提示" content="这是一个小程序组件" cancelText="知道了" confirm="谢谢你" bindcancelEvent="cancel"
+            bindconfirmEvent="confirm"></dialog>
+
+
+    <userinfo inputContent="输入内容0000"></userinfo>
+</view>
