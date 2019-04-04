@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+</head>
+<body>
+  <script>
+    class Point {
+      constructor (x, y) {
+        this.x = x;
+        this.y = y
+      }
+      toString(){
+        return `(${this.x} + ${this.y})`
+      }
+      toValue(){
+        return this.x + this.y
+      }
+      get prop(){
+        return 'getter'
+      }
+      set prop(value){
+        console.log('setter-' + value)
+      }
+    }  
+    
+    var p = new Point(1,2)
+    // p.toString = function(){
+    //   console.log('im p.toString')
+    // }
+    console.log('s',p.prop = 123)
+    console.log('p.prop',p.prop)
+    console.log(p)
+    console.log(p.toString());
+    console.log(p.toValue())
+    console.log(p.hasOwnProperty("toString"))
+    // console.log(p.toString)
+    console.log(p.__proto__.hasOwnProperty("toString"))
+
+
+    class Point1 {
+      constructor(){
+        return Object.create(null)
+      }
+    }
+    var p1 = new Point1()
+    console.log(p1 instanceof Point1)
+    console.log(p instanceof Point)
+
+
+    console.log('表达式定义一个类')
+
+    const MyClass = class Me{
+      getClassName(){
+        return Me.name
+      }
+    }
+    
+    let init = new MyClass()
+    console.log(init.getClassName())
+
+    console.log('立即执行')
+    let personClass = new class{
+      constructor(name){
+        this.name = name;
+      }
+      sayName () {
+        console.log('sayname',this.name)
+      }
+    }('yijun')
+    personClass.sayName()
+    let name = personClass.sayName()
+    console.log('global',name)    //undefined
+
+
+    
+    console.log('Class 的静态方法')
+    class Foo {
+      static classMethod(){
+        return 'hello'
+      }
+      static bar(){
+        this.baz()
+      }
+      static baz(){
+        console.log('hello')
+      }
+      baz(){
+        console.log('world')
+      }
+    }
+    Foo.bar()
+    //静态方法可以和动态方法同名
+    console.log('调用静态方法',)
+    console.log(Foo.classMethod())
+    let foo = new Foo()
+    // foo.classMethod()
+    // console.log('对象中调用',foo.classMethod())
+
+
+    class Bar extends Foo{
+
+    }
+    console.log('继承')
+    Bar.baz()
+    let bar = new Bar()
+    bar.baz()
+
+
+
+
+    class MyClassLast{
+      myProp = 42
+      constructor(){
+        console.log(this.myProp)
+      }
+    }
+
+  </script>
+</body>
+</html>
