@@ -7,3 +7,6 @@
 ## CSS层叠样式 
 
 1、[overflow: scroll IOS端卡顿解决方案](https://github.com/yigeyi/yiBlog/issues/2)
+
+
+## 设计模式
